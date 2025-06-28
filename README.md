@@ -6,7 +6,7 @@
 
 ## 🔗 Live Demo
 
-https://yourusername.github.io/phishai
+https://alihaider-dev01.github.io/PhishAI
 
 ---
 
