@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PhishAI - Hacker URL Detector</title>
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #00ff99;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 255, 140, 0.05), transparent 70%);
+      background-size: 300% 300%;
+      animation: move 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes move {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass {
+      background: rgba(0, 255, 140, 0.05);
+      border: 1px solid rgba(0, 255, 140, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 2;
+      position: relative;
+    }
+
+    input::placeholder {
+      color: #55ffbb;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4">
+  <div class="animated-bg"></div>
+
+  <div class="glass p-8 rounded-2xl shadow-2xl w-full max-w-lg text-center border border-green-500">
+    <h1 class="text-3xl font-bold mb-2 text-green-400">🔍 PhishAI</h1>
+    <p class="text-sm text-green-200 mb-6">"Scan suspicious URLs with hacker instinct 🧠"</p>
+
+    <input id="urlInput" type="text" placeholder="https://example.com"
+      class="w-full border border-green-400 bg-black text-green-300 p-3 rounded focus:outline-none mb-4">
+
+    <button onclick="checkURL()"
+      class="bg-green-500 text-black font-bold py-2 px-6 rounded hover:bg-green-400 transition">Check URL</button>
+
+    <p class="mt-6 text-xs text-green-600 italic">
+      ⚠️ This tool uses local pattern analysis. No real phishing URLs are hosted or used.
+    </p>
+  </div>
+</body>
+</html>
