@@ -6,7 +6,7 @@
 
 ## 🔗 Live Demo
 
-https://alihaider-dev01.github.io/PhishAI
+https://msohaib-dev.github.io/PhishAI
 
 ---
 
